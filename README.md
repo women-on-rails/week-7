@@ -1,7 +1,5 @@
 # Préambule
 
-Slides du cours disponibles [ici](http://slides.com/women_on_rails/week-5)
-
 Ce tutoriel a pour objectif d'apprendre à mettre en ligne une application Web, dans le cadre du cycle 1 des ateliers Women On Rails.
 
 # C'est quoi Heroku ?
