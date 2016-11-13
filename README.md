@@ -18,7 +18,7 @@ Voici quelques liens pour mieux comprendre ce service:
 
 ### Avec Cloud9
 
-#### Vérification de la version installée
+#### Mise à jour du service Heroku
 
 Ouvrez votre projet. Heroku est installé de base sur Cloud9. Il faut en premier lieu vérifier qu'il est bien à jour.
 Pour cela, tapez dans le termnial la commande suivante :
