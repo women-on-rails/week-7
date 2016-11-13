@@ -6,6 +6,12 @@ Ce tutoriel a pour objectif d'apprendre à mettre en ligne une application Web, 
 
 # C'est quoi Heroku ?
 
+Heroku est un outil, administrable à partir d'un navigateur, qui permet d'héberger une application Web dans le but de la rendre accessible à tous.
+
+Voici quelques liens pour mieux comprendre ce service:
+- [Top10 FAQ Heroku - plateforme pour innovations clients](https://www.linkedin.com/pulse/20141009115620-34850697-top10-faq-heroku-plateforme-pour-innovations-clients)
+- [Wikipedia](https://fr.wikipedia.org/wiki/Heroku)
+
 # Comment l'utiliser ?
 
 ## Installation de Heroku
