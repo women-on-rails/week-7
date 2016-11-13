@@ -10,6 +10,8 @@ Ce tutoriel a pour objectif d'apprendre à mettre en ligne une application Web, 
 
 ## Installation de Heroku
 
+> Astuce : Pour connaitre la version de Heroku installée sur votre machine, vous pouvez taper la commande suivante dans votre terminal : ``` heroku --version ```
+
 ### Avec Cloud9
 
 #### Vérification de la version installée
@@ -21,13 +23,11 @@ Pour cela, tapez dans le termnial la commande suivante :
 wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 ````
 
-> Astuce : Pour connaitre la version de Heroku installée sur votre machine, vous pouvez taper la commande suivante dans votre terminal : ``` heroku --version ```
-
 ![Version Heroku](/images/readme/heroku_version.png)
 
 ### Avec une installation native
 
-! EN CONSTRUCTION !
+Installez la version de Heroku qui vous correspond en vous aidant de ce [lien](https://devcenter.heroku.com/articles/heroku-command-line#download-and-install).
 
 ## Création d'un compte Heroku
 
@@ -40,7 +40,7 @@ Allez sur le site d'[Héroku](https://signup.heroku.com/identity) et créez-vous
 Retournez sur votre projet Cloud9 et tapez la commande suivante dans le terminal : ``` heroku login ```
 Cette commande permet de s'authentifier par rapport à Heroku.
 
-Il vous sera demandé l'adresse email et le mot de passe que vous avez utilisé pour créer votre compte héroku.
+Il vous sera demandé l'adresse email et le mot de passe que vous avez utilisé pour créer votre compte Heroku.
 
 ![Login Heroku](/images/readme/heroku_login.png)
 
@@ -55,11 +55,11 @@ N'hésitez pas à cliquer sur cette nouvelle application et à naviguer à trave
 
 ![Dashboard / Activity](/images/readme/heroku_activity_dashboard.png)
 
-## Changer le type de base de données utilisée
+## Changer le type de base de données utilisé
 
-### Installer PostGreSql
+### Installation de PostGreSql
 
-Herou ne supporte malheureusement pas le type de base de donnée ```sqlite``` car ce n'est pas un type de base de données prévu pour une utilisation intensive et stable ('production'). Nous allons donc changer pour utiliser ```postgreSQL```.
+Herou ne supporte malheureusement pas le type de base de donnée ```sqlite``` car ce n'est pas un type de base de données prévu pour une utilisation intensive et stable ('production'). Nous allons donc le changer pour utiliser ```postgreSQL```.
 
 Vous pouvez trouver plus d'informations [ici](https://devcenter.heroku.com/articles/sqlite3) concernant ce changement de base de données.
 
@@ -67,9 +67,8 @@ Dans votre application, ouvrez le fichier ```gemfile```.
 
 ![Gemfile original](/images/readme/gemfile_before.png)
 
-
 Spécifiez que la ligne ``` gem 'sqlite3' ``` doit etre utilisée seulement pour les modes ```development``` et ```test```.
-Puis, ajoutez la ligne ``` gem 'pg' ``` en spéficiant qu'elle doit etre utilisée seulement pour le mode ```production```.
+Puis, ajoutez la ligne ``` gem 'pg' ``` en spécifiant qu'elle doit etre utilisée seulement pour le mode ```production```.
 
 ![Gemfile modifié](/images/readme/gemfile_after.png)
 
@@ -84,7 +83,7 @@ L'installation terminée, ouvrez le fichier ``` config/database.yml ```. Il devr
 ![Database Configuration](/images/readme/database_before.png)
 
 Dans la section ```production```, changez la ligne ``` adapter: sqlite3 ``` par ``` adapter: postgresql ```.
-Puis changez le nom de votre base de données de production. Par exemple, ``` db/production.sqlite3 ``` devient ``` my_db_production ```.
+Puis changez le nom de votre base de données de production. Par exemple, ``` db/production.sqlite3 ``` devient ``` production ```.
 
 N'oubliez pas de sauvegardez votre fichier.
 
@@ -92,9 +91,7 @@ N'oubliez pas de sauvegardez votre fichier.
 
 ### Envoi des modifications sur Github
 
-N'oubliez pas d'enregistrer vos modifications et de les envoyer sur votre répertoire distant (Github). Vous pouvez vous aider de ce [tutoriel](Enregistrer vos modifications et les envoyer sur votre répertoire Github
-
-).
+N'oubliez pas d'enregistrer vos modifications et de les envoyer sur votre répertoire distant (Github). Vous pouvez vous aider de ce [tutoriel](https://women-on-rails.github.io/guide/push_project).
 
 ### Envoi des modifications sur Heroku
 
@@ -102,7 +99,7 @@ Pour faire en sorte qu'Heroku prenne en compte vous nouvelles modifications, com
 
 ### Mise à jour de la base de données sur Heroku
 
-Nous avons mantenant besoin de mettre à jour notre base de données ```PostGreSql``` pour ajouter les tables qui la composent. Pour cela, tapez la commande ``` heroku run rake db:migrate ``` dans votre terminal.
+Nous avons maintenant besoin de mettre à jour notre base de données ```PostGreSql``` pour ajouter les tables qui la composent. Pour cela, tapez la commande ``` heroku run rake db:migrate ``` dans votre terminal.
 
 ### Visualisation de l'application en production
 
