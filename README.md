@@ -10,18 +10,20 @@ Voici quelques liens pour mieux comprendre ce service:
 - [Top10 FAQ Heroku - plateforme pour innovations clients](https://www.linkedin.com/pulse/20141009115620-34850697-top10-faq-heroku-plateforme-pour-innovations-clients)
 - [Wikipedia](https://fr.wikipedia.org/wiki/Heroku)
 
+Nous allons utiliser ce service pour mettre en production notre application ``` Curiosities ```.
+Mettre en prodution une application, c'est déployer la version 'finale' de l'application (ou d'une fonctionnalité de l'application) pour la rendre accessible aux futurs utilisateurs, après avoir effectué les développements et tous les tests nécessaires (unitaires, fonctionnels, charge et autres) à son bon fonctionnement.
+C'est en général une version stable de l'application, sur laquelle aucun développement n'est effectué directement.
+
 # Comment l'utiliser ?
 
 ## Installation de Heroku
-
-> Astuce : Pour connaitre la version de Heroku installée sur votre machine, vous pouvez taper la commande suivante dans votre terminal : ``` heroku --version ```
 
 ### Avec Cloud9
 
 #### Mise à jour du service Heroku
 
 Ouvrez votre projet. Heroku est installé de base sur Cloud9. Il faut en premier lieu vérifier qu'il est bien à jour.
-Pour cela, tapez dans le termnial la commande suivante :
+Pour cela, tapez dans le termnial la commande suivante qui fera les mises à jour automatiquement si besoin :
 
 ``` Terminal
 wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
@@ -38,6 +40,8 @@ Installez la version de Heroku qui vous correspond en vous aidant de ce [lien](h
 Allez sur le site d'[Héroku](https://signup.heroku.com/identity) et créez-vous un compte.
 
 ![Compte Heroku](/images/readme/heroku_new_account.png)
+
+> Astuce : Pour connaitre la version de Heroku installée sur votre machine (si vous rencontrez des soucis), vous pouvez taper la commande suivante dans votre terminal : ``` heroku --version ```
 
 ## Connecter son projet à son compte Heroku
 
@@ -56,6 +60,7 @@ Heroku génère un nom aléatoire pour chaque application qu'il crée. Ici par e
 ![Dashboard](/images/readme/heroku_dashboard.png)
 
 N'hésitez pas à cliquer sur cette nouvelle application et à naviguer à travers les catégories (ressources, déploiement, activité, etc).
+Vous pouvez notamment proposer un nouveau nom pour votre application dans ``` Settings > Name ```. Attention, il faudra choisir un nom qui n’est pas déjà pris !
 
 ![Dashboard / Activity](/images/readme/heroku_activity_dashboard.png)
 
@@ -87,7 +92,11 @@ L'installation terminée, ouvrez le fichier ``` config/database.yml ```. Il devr
 ![Database Configuration](/images/readme/database_before.png)
 
 Dans la section ```production```, changez la ligne ``` adapter: sqlite3 ``` par ``` adapter: postgresql ```.
-Puis changez le nom de votre base de données de production. Par exemple, ``` db/production.sqlite3 ``` devient ``` production ```.
+Puis changez le nom de votre base de données de production. Par exemple, ``` db/production.sqlite3 ``` devient ``` curiosities_production ```.
+
+Ici, on choisit d'appeler notre base de données ``` curiosities_production ``` car elle contient toutes les données de production pour le projet ``` Curiosities ```.
+
+![Heroku Settings](/images/readme/heroku_settings_name_change.png)
 
 N'oubliez pas de sauvegardez votre fichier.
 
@@ -111,9 +120,13 @@ Lorsque vous avez lancé la commande ``` git push heroku master  ```, une url s'
 
 ![Url production](/images/readme/git_push_heroku_master.png)
 
-Cliquez dessus et vérifiez que votre application tourne !
+Cliquez dessus et vérifiez que votre application tourne.
 
 ![Visualisation](/images/readme/heroku_view_app.png)
+
+Puis, utilisez la pour créer de nouvelles curiosités dans votre base de données!
+
+![Visualisation avec curiosité](/images/readme/heroku_view_app_curiosity.png)
 
 # Liens Utiles :
 - La documentation de Ruby : http://ruby-doc.org/core-2.3.1/
