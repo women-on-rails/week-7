@@ -109,7 +109,9 @@ N'oubliez pas d'enregistrer vos modifications et de les envoyer sur votre réper
 
 ### Envoi des modifications sur Heroku
 
-Pour faire en sorte qu'Heroku prenne en compte vous nouvelles modifications, committez les puis tapez la commande suivante dans votre terminal: ``` git push heroku master ```.
+Pour faire en sorte qu'Heroku prenne en compte vos nouvelles modifications, committez les (si ce n'est pas déjà fait à l'étape précédente) puis tapez la commande suivante dans votre terminal: ``` git push heroku master ```.
+
+Tout comme pour Github, cela envoie vos nouveaux commits à votre repertoire distant sur Heroku.
 
 ### Mise à jour de la base de données sur Heroku
 
