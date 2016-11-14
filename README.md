@@ -23,13 +23,11 @@ C'est en général une version stable de l'application, sur laquelle aucun déve
 #### Mise à jour du service Heroku
 
 Ouvrez votre projet. Heroku est installé de base sur Cloud9. Il faut en premier lieu vérifier qu'il est bien à jour.
-Pour cela, tapez dans le termnial la commande suivante qui fera les mises à jour automatiquement si besoin :
+Pour cela, tapez dans le terminal la commande suivante qui fera les mises à jour automatiquement si besoin :
 
 ``` Terminal
 wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 ````
-
-![Version Heroku](/images/readme/heroku_version.png)
 
 ### Avec une installation native
 
@@ -42,6 +40,8 @@ Allez sur le site d'[Héroku](https://signup.heroku.com/identity) et créez-vous
 ![Compte Heroku](/images/readme/heroku_new_account.png)
 
 > Astuce : Pour connaitre la version de Heroku installée sur votre machine (si vous rencontrez des soucis), vous pouvez taper la commande suivante dans votre terminal : ``` heroku --version ```
+
+![Version Heroku](/images/readme/heroku_version.png)
 
 ## Connecter son projet à son compte Heroku
 
@@ -60,9 +60,12 @@ Heroku génère un nom aléatoire pour chaque application qu'il crée. Ici par e
 ![Dashboard](/images/readme/heroku_dashboard.png)
 
 N'hésitez pas à cliquer sur cette nouvelle application et à naviguer à travers les catégories (ressources, déploiement, activité, etc).
-Vous pouvez notamment proposer un nouveau nom pour votre application dans ``` Settings > Name ```. Attention, il faudra choisir un nom qui n’est pas déjà pris !
 
 ![Dashboard / Activity](/images/readme/heroku_activity_dashboard.png)
+
+Vous pouvez notamment proposer un nouveau nom pour votre application dans ``` Settings > Name ```. Attention, il faudra choisir un nom qui n’est pas déjà pris !
+
+![Dashboard / Settings](/images/readme/heroku_settings_name_change.png)
 
 ## Changer le type de base de données utilisé
 
@@ -96,11 +99,9 @@ Puis changez le nom de votre base de données de production. Par exemple, ``` db
 
 Ici, on choisit d'appeler notre base de données ``` curiosities_production ``` car elle contient toutes les données de production pour le projet ``` Curiosities ```.
 
-![Heroku Settings](/images/readme/heroku_settings_name_change.png)
-
-N'oubliez pas de sauvegardez votre fichier.
-
 ![Database Configuration](/images/readme/database_after.png)
+
+N'oubliez pas ensuite de sauvegardez votre fichier.
 
 ### Envoi des modifications sur Github
 
