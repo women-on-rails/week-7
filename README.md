@@ -122,7 +122,7 @@ Si vous consultez cette URL maitenant, vous n'y trouverez pas grand-chose car l'
 
 ### Mettre à jour la base de données sur Heroku
 
-Nous avons maintenant besoin de mettre à jour notre base de données ```PostGreSql``` pour ajouter les tables qui la composent (dans notre cas, il y a une table nommée ```curiosities``). Pour cela, tapez la commande ``` heroku run rake db:migrate ``` dans votre terminal.
+Nous avons maintenant besoin de mettre à jour notre base de données ```PostGreSql``` pour ajouter les tables qui la composent (dans notre cas, il y a une table nommée ```curiosities```). Pour cela, tapez la commande ``` heroku run rake db:migrate ``` dans votre terminal.
 
 ### Visualiser son application en production
 
