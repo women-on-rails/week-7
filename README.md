@@ -4,20 +4,20 @@ Ce tutoriel a pour objectif d'apprendre à mettre en ligne une application web, 
 
 # Sommaire
 
-1. [C'est quoi Heroku ?](#cestquoiHeroku)
-2. [Comment l'utiliser ?](#commentutiliser)
-	2.1. [Installer Heroku](#installerheroku)
-		2.1.1. [Avec Cloud9](#aveccloud9)
-		2.1.2. [Avec une installation native](#avecinstallationnative)
-	2.2. [Créer un compte Heroku](#compteheroku)
-	2.3. [Connecter son projet à son compte Heroku](#connecterprojetheroku)
-	2.4. [Changer le type de base de données utilisé](#changerbdd)
-		2.4.1. [Installer PostGreSql](#installerpostgres)
-		2.4.2. [Mettre à jour la configuration de la base de données](#majconfigbdd)
-		2.4.3. [Envoyer les modifications sur Github](#envoigithub)
-		2.4.4. [Envoyer les modifications sur Heroku](#envoiheroku)
-	2.5. [Visualiser son application en production](#visualisation)
-3. [Liens Utiles](#liensutiles)
+* [C'est quoi Heroku ?](#cestquoiHeroku)
+* [Comment l'utiliser ?](#commentutiliser)
+	* [Installer Heroku](#installerheroku)
+		* [Avec Cloud9](#aveccloud9)
+		* [Avec une installation native](#avecinstallationnative)
+	* [Créer un compte Heroku](#compteheroku)
+	* [Connecter son projet à son compte Heroku](#connecterprojetheroku)
+	* [Changer le type de base de données utilisé](#changerbdd)
+	* [Installer PostGreSql](#installerpostgres)
+	* [Mettre à jour la configuration de la base de données](#majconfigbdd)
+	* [Envoyer les modifications sur Github](#envoigithub)
+	* [Envoyer les modifications sur Heroku](#envoiheroku)
+	* [Visualiser son application en production](#visualisation)
+* [Liens Utiles](#liensutiles)
 
 # C'est quoi Heroku ? <a name="cestquoiHeroku"></a>
 
