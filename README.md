@@ -2,7 +2,24 @@
 
 Ce tutoriel a pour objectif d'apprendre à mettre en ligne une application web, dans le cadre du cycle 1 des ateliers Women On Rails.
 
-# C'est quoi Heroku ?
+# Sommaire
+
+1. [C'est quoi Heroku ?](#cestquoiHeroku)
+2. [Comment l'utiliser ?](#commentutiliser)
+	2.1. [Installer Heroku](#installerheroku)
+		2.1.1. [Avec Cloud9](#aveccloud9)
+		2.1.2. [Avec une installation native](#avecinstallationnative)
+	2.2. [Créer un compte Heroku](#compteheroku)
+	2.3. [Connecter son projet à son compte Heroku](#connecterprojetheroku)
+	2.4. [Changer le type de base de données utilisé](#changerbdd)
+		2.4.1. [Installer PostGreSql](#installerpostgres)
+		2.4.2. [Mettre à jour la configuration de la base de données](#majconfigbdd)
+		2.4.3. [Envoyer les modifications sur Github](#envoigithub)
+		2.4.4. [Envoyer les modifications sur Heroku](#envoiheroku)
+	2.5. [Visualiser son application en production](#visualisation)
+3. [Liens Utiles](#liensutiles)
+
+# C'est quoi Heroku ? <a name="cestquoiHeroku"></a>
 
 Heroku est un outil, administrable à partir d'un navigateur, qui permet d'héberger une application web dans le but de la rendre accessible à tous.
 
@@ -11,16 +28,17 @@ Voici quelques liens pour mieux comprendre ce service:
 - [Wikipedia](https://fr.wikipedia.org/wiki/Heroku)
 
 Nous allons utiliser ce service pour mettre en production notre application ``` Curiosities ```.
+
 Mettre en prodution une application, c'est déployer la version 'finale' de l'application (ou d'une fonctionnalité de l'application) pour la rendre accessible aux futurs utilisateurs, après avoir effectué les développements et tous les tests nécessaires (unitaires, fonctionnels, charge et autres) à son bon fonctionnement.
 C'est en général une version stable de l'application, sur laquelle aucun développement n'est effectué directement.
 
-# Comment l'utiliser ?
+# Comment l'utiliser ? <a name="commentutiliser"></a>
 
-## Installer Heroku
+## Installer Heroku <a name="installerheroku"></a>
 
-### Avec Cloud9
+### Avec Cloud9 <a name="aveccloud9"></a>
 
-#### Mise à jour du service Heroku
+#### Mise à jour du service Heroku <a name="majheroku"></a>
 
 Ouvrez votre projet. Heroku est installé de base sur Cloud9. Il faut en premier lieu vérifier qu'il est bien à jour.
 Pour cela, tapez dans le terminal la commande suivante qui fera les mises à jour automatiquement si besoin :
@@ -30,11 +48,11 @@ wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 ````
 > Astuce : Pour taper le symbole ``` | ```, faites Alt + Shift + L sur Mac ; ou retrouvez les raccourcis pour les autres claviers [ici](http://atlasti.com/faq/where-is-the-vertical-bar-on-my-keyboard/)
 
-### Avec une installation native
+### Avec une installation native <a name="avecinstallationnative"></a>
 
 Installez la version de Heroku qui vous correspond en vous aidant de ce [lien](https://devcenter.heroku.com/articles/heroku-command-line#download-and-install).
 
-## Créer un compte Heroku
+## Créer un compte Heroku <a name="compteheroku"></a>
 
 Allez sur le site d'[Heroku](https://signup.heroku.com/identity) et créez-vous un compte.
 
@@ -44,7 +62,7 @@ Allez sur le site d'[Heroku](https://signup.heroku.com/identity) et créez-vous 
 
 ![Version Heroku](/images/readme/heroku_version.png)
 
-## Connecter son projet à son compte Heroku
+## Connecter son projet à son compte Heroku <a name="connecterprojetheroku"></a>
 
 Retournez sur votre projet Cloud9 et tapez la commande suivante dans le terminal : ``` heroku login ```
 Cette commande permet de vous authentifier par rapport à Heroku.
@@ -68,9 +86,9 @@ Vous pouvez notamment proposer un nouveau nom pour votre application dans ``` Se
 
 ![Dashboard / Settings](/images/readme/heroku_settings_name_change.png)
 
-## Changer le type de base de données utilisé
+## Changer le type de base de données utilisé <a name="changerbdd"></a>
 
-### Installer PostGreSql
+### Installer PostGreSql <a name="installerpostgres"></a>
 
 Heroku ne supporte malheureusement pas le type de base de données ```sqlite``` car ce n'est pas un type de base de données adapté pour une utilisation intensive et stable (nécessaire dans notre application déployée en 'production'). Nous allons donc le changer pour utiliser ```postgreSQL```.
 
@@ -89,7 +107,7 @@ Puis, ajoutez la ligne ``` gem 'pg' ``` en spécifiant qu'elle doit être utilis
 
 Ensuite, lancez la commande suivante dans votre terminal pour mettre à jour vos gems : ``` bundle install ```.
 
-### Mettre à jour la configuration de la base de données
+### Mettre à jour la configuration de la base de données <a name="majconfigbdd"></a>
 
 L'installation terminée, ouvrez le fichier ``` config/database.yml ```. Il devrait actuellement ressembler à cela :
 
@@ -104,11 +122,11 @@ Ici, on choisit d'appeler notre base de données ``` curiosities_production ``` 
 
 N'oubliez pas ensuite de sauvegardez votre fichier.
 
-### Envoyer les modifications sur Github
+### Envoyer les modifications sur Github <a name="envoigithub"></a>
 
 N'oubliez pas d'enregistrer vos modifications, de les committer et de les envoyer sur votre répertoire distant (GitHub). Vous pouvez vous aider de ce [tutoriel](https://women-on-rails.github.io/guide/push_project).
 
-### Envoyer les modifications sur Heroku
+### Envoyer les modifications sur Heroku <a name="envoiheroku"></a>
 
 Pour faire en sorte qu'Heroku prenne en compte vos nouvelles modifications, committez les (si ce n'est pas déjà fait à l'étape précédente) puis tapez la commande suivante dans votre terminal: ``` git push heroku master ```.
 
@@ -120,11 +138,13 @@ Lorsque vous avez lancé cette commande, une URL s'est affichée dans votre term
 
 Si vous consultez cette URL maitenant, vous n'y trouverez pas grand-chose car l'application ne sait pas encore où trouver les données à afficher.
 
-### Mettre à jour la base de données sur Heroku
+### Mettre à jour la base de données sur Heroku <a name="cestquoiHeroku"></a>
 
-Nous avons maintenant besoin de mettre à jour notre base de données ```PostGreSql``` pour ajouter les tables qui la composent (dans notre cas, il y a une table nommée ```curiosities```). Pour cela, tapez la commande ``` heroku run rake db:migrate ``` dans votre terminal.
+Nous avons maintenant besoin de mettre à jour notre base de données ```PostGreSql``` pour ajouter les tables qui la composent (dans notre cas, il y a une table nommée ```curiosities```).
 
-### Visualiser son application en production
+Pour cela, tapez la commande ``` heroku run rake db:migrate ``` dans votre terminal.
+
+### Visualiser son application en production <a name="visualisation"></a>
 
 Vous pouvez maintenant cliquer sur l'URL de production de votre application et vérifier que votre application tourne.
 
@@ -134,7 +154,7 @@ Puis, utilisez-la pour créer de nouvelles curiosités dans votre base de donné
 
 ![Visualisation avec curiosité](/images/readme/heroku_view_app_curiosity.png)
 
-# Liens Utiles :
+# Liens Utiles : <a name="liensutiles"></a>
 - La documentation de Ruby : http://ruby-doc.org/core-2.3.1/
 - La documentation de Ruby On Rails : http://api.rubyonrails.org/
 - Heroku : https://www.heroku.com/
