@@ -160,3 +160,8 @@ Puis, utilisez-la pour créer de nouvelles curiosités dans votre base de donné
 - Heroku : https://www.heroku.com/
 - La documentation pour déployer via Cloud9 : https://docs.c9.io/docs/deploying-via-cli
 - La documentation d'Heroku pour Ruby On Rails 4 : https://devcenter.heroku.com/articles/getting-started-with-rails4
+
+# Et ensuite ?
+N'hésitez pas à faire un tour sur le [guide des Women On Rails](https://women-on-rails.github.io/guide/) pour des rappels de commandes, de l'aide ou de nouveaux tutoriels.
+
+Pour en découvrir plus sur le monde du Web et la communauté Ruby On Rails, n'hésitez pas à venir aux [ateliers libres des Women On Rails](https://www.meetup.com/fr-FR/Women-On-Rails/), aux meetups de (Rails thematic Workshops)[https://www.meetup.com/fr-FR/rails-thematic-workshops/], aux meetups de (Paris Ruby Workshop)[https://www.meetup.com/fr-FR/Paris-Ruby-Workshop/] ou encore à découvrir les rendez-vous mensuels de (ParisRB)[https://www.meetup.com/fr-FR/parisrb/] !
